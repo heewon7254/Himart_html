@@ -285,6 +285,29 @@ header nav .nav_slide .btn:hover::after{
 }
 
 /* 메인 배너 */
-.main_banner{
-	
+.main_banner .main_slide{
+	overflow: hidden;
+}
+.main_banner .main_slide a{
+	width: 100%;
+}
+.main_banner .main_slide a.md{
+	background-color: #F1EFEF;
+}
+.main_banner .main_slide a.md b{
+	font-size: inherit;
+	color:  #CB718E;
+}
+.main_banner .main_slide a.manage{
+	background-color: #000000;
+}
+.main_banner .main_slide img{
+	margin: 0 auto;
+	display: block;
+}
+.main_banner .main_slide h2{
+	font-size: 45px;
+}
+.main_banner .main_slide h3{
+	font-size: 23px;
 }

@@ -303,13 +303,65 @@
 			<div class="main_slide">
 				<div class="swiper-wrapper">
 					<div class="swiper-slide">
-						<h3>MD'S PICK!</h3>
-						<h2>이달의<b>특가<b></h2>
+						<a href="javacript:void(0)" class="md">
+							<img src="../../images/main_banner/banner_01.svg" alt="">
+							<h3 class="b_ver">MD'S PICK!</h3>
+							<h2 class="b_ver">이달의<b>특가</b></h2>
+						</a>
 					</div>
 					<div class="swiper-slide">
-						<a href="javacript:void(0)">
-							<p>홈 의류 완벽관리</p>
-							<span>인기상품을 한눈에!</span>
+						<a href="javascript:void(0)" class="manage">
+							<img src="../../images/main_banner/banner_02.svg" alt="">
+							<a href="javacript:void(0)">
+								<h3>한정수량 X 알뜰득템</h3>
+								<h2>반품상품 대방출 리퍼마켓</h2>
+								<p class="r_keyword">
+									<span>최대 75% 할인</span>
+								</p>
+							</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:void(0)" class="manage">
+							<img src="../../images/main_banner/banner_03.svg" alt="">
+							<a href="javacript:void(0)">
+								<h3>브랜드 믹스 & 매치</h3>
+								<h2>2개 이상 구매 시 최대 42만P 혜택!</h2>
+								<p class="r_keyword">
+									<span>L.POINT 적립</span>
+									<span>응모필수</span>
+								</p>
+							</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:void(0)" class="manage">
+							<img src="../../images/main_banner/banner_04.svg" alt="">
+							<a href="javacript:void(0)">
+								<h3>수능대박 SALE</h3>
+								<h2>수험표 인증하고 올리브영 상품권 받자!</h2>
+								<p class="r_keyword">
+									<span>L.POINT 적립</span>
+								</p>
+							</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:void(0)" class="manage">
+							<img src="../../images/main_banner/banner_05.svg" alt="">
+							<a href="javacript:void(0)">
+								<h3>비교 불가 성능. 시선 강탈 매력.</h3>
+								<h2>MacBook Pro M3 사전예약</h2>
+							</a>
+						</a>
+					</div>
+					<div class="swiper-slide">
+						<a href="javascript:void(0)" class="manage">
+							<img src="../../images/main_banner/banner_06.svg" alt="">
+							<a href="javacript:void(0)">
+								<h3>서비스도 안심하고 받자!</h3>
+								<h2>가전클리닝/이전설치+고장 수리비 보장</h2>
+							</a>
 						</a>
 					</div>
 				</div>
@@ -334,15 +386,44 @@
 		});
 
 		//메인 배너 슬라이드
+		let mainBannerNavBtn = document.querySelectorAll('.main_banner .main_slide .btn');
+
 		var mainSlide = new Swiper(".main_slide", {
 			loop: true,
 			navigation: {
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev",
 			},
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
+			// autoplay: {
+			// 	delay: 2500,
+			// 	disableOnInteraction: false,
+			// },
+			a11y: { // 웹접근성 
+				enabled: true,
+				prevSlideMessage: '이전 슬라이드',
+				nextSlideMessage: '다음 슬라이드',   
+				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+			},
+			on: {
+				init: function() {    
+					// fraction에 현재 인덱스와 전체 인덱스 표시
+					// this.loopedSlides는 loop, slidesPerView: 'auto'일 때 제대로 동작
+					if(this.realIndex == 1 || this.realIndex == 2 || this.realIndex == 3 || this.realIndex == 5){
+						mainBannerNavBtn.forEach(function(item){
+							item.classList.add('white');
+						})
+					}else{
+						mainBannerNavBtn.forEach(function(item){
+							item.classList.remove('white');
+						})
+					}
+					// $('.custom-fraction .current').text(this.realIndex + 1);
+					// $('.custom-fraction .all').text(this.loopedSlides);
+				},
+				// slideChangeTransitionStart: function() {
+				// 	// 페이지 넘어갈 때마다 fraction 현재 인덱스 변경
+				// 	$('.custom-fraction .current').text(this.realIndex + 1);
+				// }
 			},
 		});
 	</script>
