@@ -125,6 +125,11 @@ input::file-selector-button {
 	background:white;
 	font-family: 'Noto Sans KR';
 }
+button{
+	background: none;
+	outline: none;
+	border: none;
+}
 /* 테이블 */
 table{
 	width: 100%;
@@ -185,7 +190,11 @@ header .inner{
 	max-width: 1440px;
 	margin: 0 auto;
 }
-
+/* 컨텐츠 container */
+.con{
+	max-width: 1200px;
+	margin: 0 auto;
+}
 
 /* nav 추가 */
 header .nav_wrap{
@@ -220,13 +229,15 @@ header nav .gnb .r_menu > a:hover{
 }
 header nav .gnb .lnb_inn{
 	position: absolute;
-	padding: 20px 35px 20px 10px;
+	padding: 45px 30px 20px;
+	border-radius: 0 0 20px 20px;
 	display: flex;
 	gap: 40px;
 	background-color: white;
 	visibility: hidden;
 	opacity: 0;
 	transition: 0.1s;
+	z-index: 20;
 }
 header nav .gnb .l_menu.active .lnb_inn{
 	visibility: visible;
@@ -251,6 +262,7 @@ header nav .gnb .lnb_inn .lnb:after{
 }
 header nav .gnb .lnb_inn .lnb a{
 	font-size: 14px;
+	font-weight: 500;
 	white-space: nowrap;
 }
 header nav .gnb .lnb_inn .lnb a:hover{
@@ -285,29 +297,111 @@ header nav .nav_slide .btn:hover::after{
 }
 
 /* 메인 배너 */
+.main_banner .main_slide .con{
+	position: relative;
+}
 .main_banner .main_slide{
 	overflow: hidden;
+	position: relative;
 }
 .main_banner .main_slide a{
 	width: 100%;
 }
 .main_banner .main_slide a.md{
-	background-color: #F1EFEF;
-}
-.main_banner .main_slide a.md b{
-	font-size: inherit;
-	color:  #CB718E;
+	background-color: #EEE9E3;
 }
 .main_banner .main_slide a.manage{
 	background-color: #000000;
+	color: white;
+}
+.main_banner .main_slide a.brand{
+	background-color: #FF4848;
+	color: white;
+}
+.main_banner .main_slide a.olive{
+	background-color: #0F7C5C;
+	color: white;
+}
+.main_banner .main_slide a.mac{
+	background-color: #FAFAFA;
+}
+.main_banner .main_slide a.service{
+	background-color: #486EF5;
+	color: white;
 }
 .main_banner .main_slide img{
-	margin: 0 auto;
+	margin: 0 0 0 auto;
 	display: block;
 }
 .main_banner .main_slide h2{
-	font-size: 45px;
+	font-size: 48px;
+	padding-top: 25px;
+	font-weight: 500;
 }
 .main_banner .main_slide h3{
 	font-size: 23px;
 }
+.main_banner .main_slide .r_keyword{
+	padding-top: 20px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.main_banner .main_slide .r_keyword span{
+	padding: 5px 15px;
+	border: 1px solid white;
+	border-radius: 20px;
+}
+.main_banner .main_slide .banner_title{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.main_banner .main_slide .slide_btn_inn{
+	position: absolute;
+    width: 1440px;
+    top: 50%;
+	left: 50%;
+    transform: translate(-50%, -50%);
+	z-index: 10;
+}
+
+/* 메인 탭슬라이드 */
+.main_tab_slide .tab_btn{
+	overflow: hidden;
+}
+
+/* HIT & 단독 */
+/* 상단 슬라이드(상품 나열)  */
+
+/* 오늘의 추전 */
+/* 상품 나열 */
+
+/* HI Service */
+/* 장기 무이자, 창고대개방, 리퍼마켓, 홈서비스, 이전 설치, 스마트픽, 2시간퀵배송 */
+
+
+
+
+/* TV/pc/mobile */
+
+/* 주방가전 */
+
+/* 리빙가전 */
+
+
+/* 카테고리 탭으로 해서 밑에 슬라이드  */
+/* 지금은 왼쪽고정으로 해서 카테고리 보여줌 */
+
+
+/* 오른쪽 하단 고정 */
+/* 하트톡, 희망가 견적, 탑버튼 */
+
+
+
+/* 삼닷페스타연말결산 */
+/* 새로운 갤럭시 */
+/* 12월의 특별 혜택 */
+/* 삼닷번개특가 */
+/* samsung Experience */
