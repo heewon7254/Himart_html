@@ -9,3 +9,13 @@ menuList.forEach(function(item,idx){
 		this.classList.remove('active');
 	});
 });
+
+// main tab slide 
+// let tabTitle = document.querySelectorAll('.main_tab_slide .tab_btn');
+
+// tabTitle.forEach(function(item){
+// 	item.addEventListener('click',function(){
+// 		item.classList.remove('swiper-slide-active');
+// 		this.classList.add('swiper-slide-active');
+// 	});
+// });

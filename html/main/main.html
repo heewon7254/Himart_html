@@ -399,19 +399,19 @@
 			<div class="con">
 				<div class="tab_btn">
 					<div class="swiper-wrapper">
-						<div class="swiper-slide">
+						<div class="swiper-slide active_tab">
 							<button>HIT & 단독</button>
 						</div>
 						<div class="swiper-slide">
 							<button>오늘의 추전</button>
 						</div>
 						<div class="swiper-slide">
-							<button>HI ! Service</button>
+							<button>HI Service</button>
 						</div>
 					</div>
 				</div>
 				<div class="tab_con">
-
+					
 				</div>
 			</div>
 		</div>
@@ -451,26 +451,34 @@
 				prevSlideMessage: '이전 슬라이드',
 				nextSlideMessage: '다음 슬라이드',   
 				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
-			}
+			},
 		});
 
 		//메인 탭슬라이드
 		var mainTabSlide = new Swiper('.main_tab_slide .tab_btn', {
-			// loop: true,
-			// navigation: {
-			// 	nextEl: ".swiper-button-next",
-			// 	prevEl: ".swiper-button-prev",
-			// },
-			// autoplay: {
-			// 	delay: 2500,
-			// 	disableOnInteraction: false,
-			// },
+			freeMode: true,
+			slidesPerView: "auto",
+			spaceBetween: 30,
+			mousewheelControl: true,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false,
+			},
 			a11y: { // 웹접근성 
 				enabled: true,
+				slidesPerView: "auto",
 				prevSlideMessage: '이전 슬라이드',
 				nextSlideMessage: '다음 슬라이드',   
 				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+			},
+			onTap: function(swiper, event) {
+				if( event.target.classList.contains('swiper-slide') && !event.target.classList.contains('active_tab') ) {
+					event.target.parentElement.querySelector('.active_tab').classList.remove('active_tab');
+					event.target.classList.add('active_tab');
+				// tabContent.slideTo(swiper.clickedIndex);
+				}
 			}
+			// clickable: true
 		});
 	</script>
 </body>

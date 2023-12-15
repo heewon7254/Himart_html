@@ -368,9 +368,40 @@ header nav .nav_slide .btn:hover::after{
 }
 
 /* 메인 탭슬라이드 */
-.main_tab_slide .tab_btn{
-	overflow: hidden;
+.main_tab_slide .con{
+	padding-top: 30px;
+	padding-bottom: 30px;
 }
+.main_tab_slide .tab_btn{
+	/* overflow: hidden; */
+}
+.main_tab_slide .tab_btn .swiper-wrapper{
+	justify-content: center;
+}
+.main_tab_slide .tab_btn .swiper-slide{
+	width: auto;
+	position: relative;
+}
+.main_tab_slide .tab_btn .swiper-slide::after{
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: -2px;
+	width: 0;
+	/* width: calc(100% + 6px); */
+	transition: width 0.2s;
+	height: 6px;
+	background: linear-gradient(90deg, rgba(245,160,160,1) 0%, rgba(240,18,25,0.4768032212885154) 28%, rgba(214,31,37,1) 100%);
+	transform: rotate(-4deg);
+	border-radius: 5px 10px 10px 5px;
+}
+.main_tab_slide .tab_btn .swiper-slide.swiper-slide-active:after{
+	width: calc(100% + 6px);
+}
+
+/* .main_tab_slide .tab_btn .swiper-slide.swiper-slide-active button{
+	color: var(--m_c);
+} */
 
 /* HIT & 단독 */
 /* 상단 슬라이드(상품 나열)  */
@@ -380,7 +411,6 @@ header nav .nav_slide .btn:hover::after{
 
 /* HI Service */
 /* 장기 무이자, 창고대개방, 리퍼마켓, 홈서비스, 이전 설치, 스마트픽, 2시간퀵배송 */
-
 
 
 
