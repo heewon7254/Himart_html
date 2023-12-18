@@ -78,6 +78,10 @@ img {
 	transform:translateZ(0);
 	backface-visibility:hidden;
 }
+picture{
+	display: inline-block;
+	font-size: 0;
+}
 a {
 	text-decoration: none;
 	font-size: inherit;
@@ -98,6 +102,9 @@ a:hover{
 	/* text-decoration: underline;
 	text-decoration-thickness: 1px;
 	text-underline-position: under; */
+}
+span{
+	display: inline-block;
 }
 input[type=number] {
 	-moz-appearance: textfield;
@@ -373,7 +380,7 @@ header nav .nav_slide .btn:hover::after{
 	padding-bottom: 30px;
 }
 .main_tab_slide .tab_btn{
-	/* overflow: hidden; */
+	overflow: hidden;
 }
 .main_tab_slide .tab_btn .swiper-wrapper{
 	justify-content: center;
@@ -381,27 +388,96 @@ header nav .nav_slide .btn:hover::after{
 .main_tab_slide .tab_btn .swiper-slide{
 	width: auto;
 	position: relative;
+	transition: color 0.1s;
 }
 .main_tab_slide .tab_btn .swiper-slide::after{
 	content: '';
-	position: absolute;
-	bottom: -5px;
-	left: -2px;
-	width: 0;
-	/* width: calc(100% + 6px); */
-	transition: width 0.2s;
-	height: 6px;
-	background: linear-gradient(90deg, rgba(245,160,160,1) 0%, rgba(240,18,25,0.4768032212885154) 28%, rgba(214,31,37,1) 100%);
-	transform: rotate(-4deg);
+    position: absolute;
+    bottom: -8px;
+    left: -2px;
+    width: 0;
+    height: 7px;
+    background: linear-gradient(90deg, rgba(245,160,160,1) 0%, rgba(240,18,25,0.4768032212885154) 28%, rgba(214,31,37,1) 100%);
+    transform: rotate(-2deg);
 	border-radius: 5px 10px 10px 5px;
 }
-.main_tab_slide .tab_btn .swiper-slide.swiper-slide-active:after{
+.main_tab_slide .tab_btn .swiper-slide.active:after{
 	width: calc(100% + 6px);
+	transition: width 0.2s;
 }
-
-/* .main_tab_slide .tab_btn .swiper-slide.swiper-slide-active button{
+.main_tab_slide .tab_btn button{
+	font-size: 18px;
+	transition: 0.1s;
+}
+.main_tab_slide .tab_btn .swiper-slide.active button{
+	background: linear-gradient(to right, #fd343b, #c3141b);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-weight: 500;
+}
+.main_tab_slide .tab_btn .swiper-slide.active button::before{
+	content: attr(title);
+	display: block;
+	height: 0px;
+	visibility: hidden;
+}
+.main_tab_slide .tab_con{
+	padding-top: 30px;
+	overflow: hidden;
+}
+.main_tab_slide .tab_con .hit{
+	display: grid;
+	grid-template-columns: repeat(3,1fr);
+    gap: 20px 15px;
+}
+.main_tab_slide .tab_con .hit .item{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #EEEEEE;
+    border-radius: 5px;
+	transition: 0.2s;
+}
+.main_tab_slide .tab_con .hit .item:hover{
+	border-color: var(--m_c);
+	box-shadow: 0px 8px 12px 0px rgba(0,0,0,0.05);
+}
+.main_tab_slide .tab_con .hit .item a{
+	padding: 20px;
+	width: 100%;
+}
+.main_tab_slide .tab_con .hit .img_inn{
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+}
+.main_tab_slide .tab_con .hit img{
+	transition: 0.2s;
+}
+.main_tab_slide .tab_con .hit .item:hover img{
+	transform: scale(1.08);
+}
+.main_tab_slide .tab_con .hit .ctg{
+	/* background-color: var(--m_c); */
+	/* color: white; */
+	margin-top: 13px;
+	border: 1px solid var(--m_c);
 	color: var(--m_c);
-} */
+	font-weight: 500;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+.main_tab_slide .tab_con .hit .con_title{
+	font-size: 18px;
+	font-weight: 500;
+	padding-top: 10px;
+}
+.main_tab_slide .tab_con .hit .sub_txt{
+	padding-top: 5px;
+	color: #4b4b4b;
+}
 
 /* HIT & 단독 */
 /* 상단 슬라이드(상품 나열)  */
@@ -421,7 +497,7 @@ header nav .nav_slide .btn:hover::after{
 /* 리빙가전 */
 
 
-/* 카테고리 탭으로 해서 밑에 슬라이드  */
+/* 카테고리 탭으로 해서 밑에 슬라이드 */
 /* 지금은 왼쪽고정으로 해서 카테고리 보여줌 */
 
 

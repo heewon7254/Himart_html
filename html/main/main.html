@@ -403,7 +403,7 @@
 							<button>HIT & 단독</button>
 						</div>
 						<div class="swiper-slide">
-							<button>오늘의 추전</button>
+							<button>오늘의 추천</button>
 						</div>
 						<div class="swiper-slide">
 							<button>HI Service</button>
@@ -411,16 +411,116 @@
 					</div>
 				</div>
 				<div class="tab_con">
-					
+					<div class="swiper-wrapper">
+						<!-- HIT & 단독 슬라이드 -->
+						<div class="swiper-slide">
+							<!-- height 648.75px -->
+							<div class="hit">
+								<div class="item">
+									<a href="javascript:void(0)">
+										<!-- picture 태그 사용하는 이유：반응형 이미지 구현을 위해 사용함으로써 대역폭 절약 ＆ 페이지 로드 시간 단축 ＆ 개발자 이미지 수정 편리 -->
+										<picture class="img_inn">
+											<!-- source 태그 srcset(경로), media[ex: media="(max-width: 768px)"], type[ex: type="image/avif"] -->
+											<img src="../../images/main/mainTabSlide_01.svg" alt="">				
+										</picture>
+										<span class="ctg">HIT 상품</span>
+										<p class="con_title">2023 라스트 찬스</p>
+										<span class="sub_txt">하이마트 인기 게임 특가전</span>
+									</a>
+								</div>
+								<div class="item">
+									<a href="javascript:void(0)">
+										<picture class="img_inn">
+											<img src="../../images/main/mainTabSlide_02.svg" alt="">							
+										</picture>
+										<span class="ctg">단독특가</span>
+										<p class="con_title">매트리스 명가 씰리</p>
+										<span class="sub_txt">우리집을 호텔로 만들어드립니다.</span>
+									</a>
+								</div>
+								<div class="item">
+									<a href="javascript:void(0)">
+										<picture class="img_inn">
+											<img src="../../images/main/mainTabSlide_03.svg" alt="">							
+										</picture>
+										<span class="ctg">단독특가</span>
+										<p class="con_title">집에서 완벽히 즐기는 홈카페</p>
+										<span class="sub_txt">프리미엄 커피 머신부터 홈카페 모든 것</span>
+									</a>
+								</div>
+								<div class="item">
+									<a href="javascript:void(0)">
+										<picture class="img_inn">
+											<img src="../../images/main/mainTabSlide_04.svg" alt="">							
+										</picture>
+										<span class="ctg">HIT 상품</span>
+										<p class="con_title">겨울가전 특가전</p>
+										<span class="sub_txt">하이마트와 따뜻한 겨울나기</span>
+									</a>
+								</div>
+								<div class="item">
+									<a href="javascript:void(0)">
+										<picture class="img_inn">
+											<img src="../../images/main/mainTabSlide_05.svg" alt="">							
+										</picture>
+										<span class="ctg">HIT 상품</span>
+										<p class="con_title">냉난방기로 사계절을</p>
+										<span class="sub_txt">하이마트 단독 특가</span>
+									</a>
+								</div>
+								<div class="item">
+									<a href="javascript:void(0)">
+										<picture class="img_inn">
+											<img src="../../images/main/mainTabSlide_06.svg" alt="">							
+										</picture>
+										<span class="ctg">단독특가</span>
+										<p class="con_title">세탁기/건조기/의류관리기</p>
+										<span class="sub_txt">BEST 특가전</span>
+									</a>
+								</div>
+							</div>
+							<!-- 추후 json으로 처리 -->
+							<!-- <div class="more_btn" style="display: flex; justify-content: center; padding-top: 20px;">
+								<button style="background-color: var(--m_c); color: white; padding: 7px 20px; border-radius: 5px; font-size: 14px;">더보기</button>
+							</div> -->
+						</div>
+						<!-- 오늘의 추천 슬라이드 -->
+						<div class="swiper-slide">
+							<div class="today">
+								<div class="item">
+									<div class="ctg_txt">
+										<p class="con_title">TV</p>
+										<!-- <span class="sub_txt"></span> -->
+									</div>
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<picture class="img_inn">
+												<img src="../../images/nav_slide/tv_01.jpg" alt="">
+											</picture>
+											<p class="prd_title"></p>
+											<span class="prd_sub_txt"></p>
+										</div>
+										<div class="swiper-slide">
+											<picture class="img_inn">
+												<img src="../../images/nav_slide/tv_01.jpg" alt="">
+											</picture>
+											<p class="prd_title"></p>
+											<span class="prd_sub_txt"></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<footer>footer</footer>
-	<!-- swiper slide -->
+	<!-- swiper slide script -->
 	<script>
 		// 메뉴 슬라이드
-		var navSlide = new Swiper(".nav_slide", {
+		var navSlide = new Swiper('.nav_slide', {
 			loop: true,
 			navigation: {
 				nextEl: ".swiper-button-next",
@@ -456,14 +556,13 @@
 
 		//메인 탭슬라이드
 		var mainTabSlide = new Swiper('.main_tab_slide .tab_btn', {
-			freeMode: true,
+			// freeMode: true,
 			slidesPerView: "auto",
 			spaceBetween: 30,
-			mousewheelControl: true,
-			autoplay: {
-				delay: 2500,
-				disableOnInteraction: false,
-			},
+			preventClicks: true,
+			preventClicksPropagation: false,
+    		observer: true,
+    		observeParents: true,
 			a11y: { // 웹접근성 
 				enabled: true,
 				slidesPerView: "auto",
@@ -471,14 +570,32 @@
 				nextSlideMessage: '다음 슬라이드',   
 				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
 			},
-			onTap: function(swiper, event) {
-				if( event.target.classList.contains('swiper-slide') && !event.target.classList.contains('active_tab') ) {
-					event.target.parentElement.querySelector('.active_tab').classList.remove('active_tab');
-					event.target.classList.add('active_tab');
-				// tabContent.slideTo(swiper.clickedIndex);
-				}
-			}
-			// clickable: true
+		});
+
+		//메인 탭슬라이드 클릭 시 이동
+		var tabSlideBtn = $('.main_tab_slide .tab_btn button');
+
+		tabSlideBtn.click(function(){
+			var target = $(this).parent();
+			tabSlideBtn.parent().removeClass('active');
+			target.addClass('active');
+		})
+
+		// 메인 탭 슬라이드 콘텐츠
+		var mainTabSlide = new Swiper('.main_tab_slide .tab_con', {
+			slidesPerView: "1",
+			spaceBetween: 5,
+			preventClicks: true,
+			preventClicksPropagation: false,
+    		observer: true,
+    		observeParents: true,
+			a11y: { // 웹접근성 
+				enabled: true,
+				slidesPerView: "auto",
+				prevSlideMessage: '이전 슬라이드',
+				nextSlideMessage: '다음 슬라이드',   
+				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+			},
 		});
 	</script>
 </body>
