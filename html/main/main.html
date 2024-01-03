@@ -22,7 +22,10 @@
 	<!-- fav icon 넣기 -->
 </head>
 <body>
-	<!-- 스킵 콘텐츠 바로가기 -->
+	<p id="skip_nav" class="skip_nav">
+	    <a href="#contents">본문으로 바로가기</a>
+	    <a href="#gnb1">주메뉴 바로가기</a>
+	</p>
 	<!-- 푸터 고정하기 -->
 	<!-- header z-index 10 ~ 20 -->
 	<header>
@@ -306,7 +309,7 @@
 		</div>
 	</header>
 	<!-- wrap z - index 1 ~ 10 -->
-	<div class="wrap">
+	<div class="wrap" id="contents">
 		<!-- 배너 슬라이드 -->
 		<div class="main_banner">
 			<div class="main_slide">
@@ -486,7 +489,7 @@
 						</div>
 						<!-- 오늘의 추천 슬라이드 -->
 						<div class="swiper-slide">
-							<div class="today">
+							<div class="today"> 
 								<div class="item">
 									<div class="ctg_txt">
 										<p class="con_title">TV</p>
@@ -557,7 +560,7 @@
 		//메인 탭슬라이드
 		var mainTabSlide = new Swiper('.main_tab_slide .tab_btn', {
 			// freeMode: true,
-			slidesPerView: "auto",
+			slidesPerView: 'auto',
 			spaceBetween: 30,
 			preventClicks: true,
 			preventClicksPropagation: false,
@@ -565,7 +568,7 @@
     		observeParents: true,
 			a11y: { // 웹접근성 
 				enabled: true,
-				slidesPerView: "auto",
+				slidesPerView: 'auto',
 				prevSlideMessage: '이전 슬라이드',
 				nextSlideMessage: '다음 슬라이드',   
 				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
@@ -583,7 +586,7 @@
 
 		// 메인 탭 슬라이드 콘텐츠
 		var mainTabSlide = new Swiper('.main_tab_slide .tab_con', {
-			slidesPerView: "1",
+			slidesPerView: 1,
 			spaceBetween: 5,
 			preventClicks: true,
 			preventClicksPropagation: false,
