@@ -308,6 +308,11 @@
 			</div>
 		</div>
 	</header>
+	<div class="bg_mask">
+		<!-- 화면상에는 안 나타나지만, 웹 접근성 위해 class="sr_only" 사용 -->
+		<span class="sr_only">검은색 뒷배경</span>
+	</div>
+	<!-- 메뉴 호버 시 class="on" 추가되면서 검은색 뒷배경 활성화 -->
 	<!-- wrap z - index 1 ~ 10 -->
 	<div class="wrap" id="contents">
 		<!-- 배너 슬라이드 -->
@@ -429,6 +434,9 @@
 										<span class="ctg">HIT 상품</span>
 										<p class="con_title">2023 라스트 찬스</p>
 										<span class="sub_txt">하이마트 인기 게임 특가전</span>
+										<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 								<div class="item">
@@ -439,6 +447,9 @@
 										<span class="ctg">단독특가</span>
 										<p class="con_title">매트리스 명가 씰리</p>
 										<span class="sub_txt">우리집을 호텔로 만들어드립니다.</span>
+										<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 								<div class="item">
@@ -449,6 +460,9 @@
 										<span class="ctg">단독특가</span>
 										<p class="con_title">집에서 완벽히 즐기는 홈카페</p>
 										<span class="sub_txt">프리미엄 커피 머신부터 홈카페 모든 것</span>
+																				<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 								<div class="item">
@@ -459,6 +473,9 @@
 										<span class="ctg">HIT 상품</span>
 										<p class="con_title">겨울가전 특가전</p>
 										<span class="sub_txt">하이마트와 따뜻한 겨울나기</span>
+										<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 								<div class="item">
@@ -469,6 +486,9 @@
 										<span class="ctg">HIT 상품</span>
 										<p class="con_title">냉난방기로 사계절을</p>
 										<span class="sub_txt">하이마트 단독 특가</span>
+										<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 								<div class="item">
@@ -479,6 +499,9 @@
 										<span class="ctg">단독특가</span>
 										<p class="con_title">세탁기/건조기/의류관리기</p>
 										<span class="sub_txt">BEST 특가전</span>
+										<button class="cart">
+											<img src="../../images/main/product_cart_icon.svg" alt="장바구니 담기">
+										</button>
 									</a>
 								</div>
 							</div>
@@ -489,24 +512,15 @@
 						</div>
 						<!-- 오늘의 추천 슬라이드 -->
 						<div class="swiper-slide">
-							<div class="today"> 
-								<div class="item">
-									<div class="ctg_txt">
-										<p class="con_title">TV</p>
-										<!-- <span class="sub_txt"></span> -->
-									</div>
-									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<picture class="img_inn">
-												<img src="../../images/nav_slide/tv_01.jpg" alt="">
-											</picture>
-											<p class="prd_title"></p>
-											<span class="prd_sub_txt"></p>
-										</div>
-										<div class="swiper-slide">
-											<picture class="img_inn">
-												<img src="../../images/nav_slide/tv_01.jpg" alt="">
-											</picture>
+							<div class="today">
+								<h4 class="con_title"><b>오늘만 특가</b><span>00</span> 시간 <span>58</span>분 남았습니다.</h4>
+								<div class="item_inn">
+									<div class="item">
+										<picture class="img_inn">
+											<img src="../../images/nav_slide/tv_01.jpg" alt="">
+										</picture>
+										<div class="prd_title_inn">
+											<span class="remain_cnt">남은 수량</span>
 											<p class="prd_title"></p>
 											<span class="prd_sub_txt"></p>
 										</div>

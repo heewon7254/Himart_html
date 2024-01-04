@@ -140,17 +140,20 @@
 .main_tab_slide .tab_con .hit .item a{
 	padding: 20px;
 	width: 100%;
+	position: relative;
 }
 .main_tab_slide .tab_con .hit .img_inn{
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
+	height: 178px;
 }
-.main_tab_slide .tab_con .hit img{
+.main_tab_slide .tab_con .hit .img_inn img{
 	transition: 0.2s;
+	height: 100%;
 }
-.main_tab_slide .tab_con .hit .item:hover img{
+.main_tab_slide .tab_con .hit .item:hover .img_inn img{
 	transform: scale(1.08);
 }
 .main_tab_slide .tab_con .hit .ctg{
@@ -173,7 +176,47 @@
 	padding-top: 5px;
 	color: #4b4b4b;
 }
-
+.main_tab_slide .tab_con .hit .cart{
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	border: 1px solid #d7d6d6;
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+}
+.main_tab_slide .tab_con .hit .cart:hover{
+	background-color: #edf0f3;
+	border-color: transparent;
+}
+.main_tab_slide .tab_con .today{
+	padding: 30px;
+	background-color: #edf0f3;
+}
+.main_tab_slide .tab_con .today .con_title{
+	text-align: center;
+	font-size: 20px;
+	margin-bottom: 35px;
+}
+.main_tab_slide .tab_con .today .con_title b{
+	font-size: 20px;
+	color: white;
+	font-weight: 500;
+	background-color: black;
+	padding: 0px 15px;
+	border-radius: 30px;
+	margin-right: 10px;
+	height: 45px;
+	display: inline-block;
+	line-height: 44px;
+}
+.main_tab_slide .tab_con .today .item_inn{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
 /* HIT & 단독 */
 /* 상단 슬라이드(상품 나열)  */
 

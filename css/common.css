@@ -136,6 +136,7 @@ button{
 	background: none;
 	outline: none;
 	border: none;
+	cursor: pointer;
 }
 /* 테이블 */
 table{
@@ -172,6 +173,16 @@ table td{
 table.tb_fixed{
 	table-layout: fixed;
 }
+.sr_only{
+	position: absolute;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    border: 0;
+    clip: rect(0,0,0,0);
+}
 /* 드래그 선택 시 css */
 ::selection{
 	/* color: red;
@@ -193,9 +204,20 @@ footer{
 
 
 /* 헤더 container */
+header{
+	position: relative;
+	z-index: 20;
+	background-color: white;
+}
 header .inner{
 	max-width: 1440px;
 	margin: 0 auto;
+}
+.bg_mask.on{
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0,0,0,0.55);
+	z-index: 19;
 }
 /* 컨텐츠 container */
 .con{
@@ -210,29 +232,24 @@ header .nav_wrap{
 }
 header nav .gnb{
 	display: flex;
-	gap: 30px;
 }
 header nav .gnb .r_start{
-	flex: auto;
+	margin: 0 0 0 auto;
 	text-align: right;
 }
 header nav .gnb > li > a{
 	font-size: 14px;
 	font-weight: 600;
-	padding: 5px 10px;
+	padding: 7px 16px;
 	/* transition: 0.1s; */
 	border-radius: 20px;
 }
+header nav .gnb > li:hover > a{
+	background-color: #e01e25;
+	color: white;
+}
 header nav .gnb .l_menu{
 	position: relative;
-}
-header nav .gnb .l_menu.active > a{
-	background-color: #e01e25;
-	color: white;
-}
-header nav .gnb .r_menu > a:hover{
-	background-color: #e01e25;
-	color: white;
 }
 header nav .gnb .lnb_inn{
 	position: absolute;
@@ -243,8 +260,11 @@ header nav .gnb .lnb_inn{
 	background-color: white;
 	visibility: hidden;
 	opacity: 0;
-	transition: 0.1s;
 	z-index: 20;
+	-webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 header nav .gnb .l_menu.active .lnb_inn{
 	visibility: visible;
