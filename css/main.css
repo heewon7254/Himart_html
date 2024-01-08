@@ -125,7 +125,7 @@
 	grid-template-columns: repeat(3,1fr);
     gap: 20px 15px;
 }
-.main_tab_slide .tab_con .hit .item{
+.main_tab_slide .hit .item{
 	display: flex;
     align-items: center;
     justify-content: center;
@@ -133,30 +133,30 @@
     border-radius: 5px;
 	transition: 0.2s;
 }
-.main_tab_slide .tab_con .hit .item:hover{
+.main_tab_slide .hit .item:hover{
 	border-color: var(--m_c);
 	box-shadow: 0px 8px 12px 0px rgba(0,0,0,0.05);
 }
-.main_tab_slide .tab_con .hit .item a{
+.main_tab_slide .hit .item a{
 	padding: 20px;
 	width: 100%;
 	position: relative;
 }
-.main_tab_slide .tab_con .hit .img_inn{
+.main_tab_slide .hit .img_inn{
 	border-radius: 5px;
 	overflow: hidden;
 	display: flex;
 	justify-content: center;
 	height: 178px;
 }
-.main_tab_slide .tab_con .hit .img_inn img{
+.main_tab_slide .hit .img_inn img{
 	transition: 0.2s;
 	height: 100%;
 }
-.main_tab_slide .tab_con .hit .item:hover .img_inn img{
+.main_tab_slide .hit .item:hover .img_inn img{
 	transform: scale(1.08);
 }
-.main_tab_slide .tab_con .hit .ctg{
+.main_tab_slide .hit .ctg{
 	/* background-color: var(--m_c); */
 	/* color: white; */
 	margin-top: 13px;
@@ -167,16 +167,16 @@
     padding: 4px 10px;
     border-radius: 20px;
 }
-.main_tab_slide .tab_con .hit .con_title{
+.main_tab_slide .hit .con_title{
 	font-size: 18px;
 	font-weight: 500;
 	padding-top: 10px;
 }
-.main_tab_slide .tab_con .hit .sub_txt{
+.main_tab_slide .hit .sub_txt{
 	padding-top: 5px;
 	color: #4b4b4b;
 }
-.main_tab_slide .tab_con .hit .cart{
+.main_tab_slide .hit .cart{
 	position: absolute;
 	right: 20px;
 	bottom: 20px;
@@ -188,23 +188,23 @@
 	width: 32px;
 	height: 32px;
 }
-.main_tab_slide .tab_con .hit .cart:hover{
+.main_tab_slide .hit .cart:hover{
 	background-color: #edf0f3;
 	border-color: transparent;
 }
 .main_tab_slide .tab_con .today{
-	padding: 30px;
+	padding: 28px;
 	background-color: #edf0f3;
+	border-radius: 4px;
 }
-.main_tab_slide .tab_con .today .con_title{
+.main_tab_slide .today .con_title{
 	text-align: center;
 	font-size: 20px;
-	margin-bottom: 35px;
-}
-.main_tab_slide .tab_con .today .con_title b{
-	font-size: 20px;
-	color: white;
+	margin-bottom: 20px;
 	font-weight: 500;
+}
+.main_tab_slide .today .con_title b{
+	color: white;
 	background-color: black;
 	padding: 0px 15px;
 	border-radius: 30px;
@@ -213,10 +213,117 @@
 	display: inline-block;
 	line-height: 44px;
 }
-.main_tab_slide .tab_con .today .item_inn{
+.main_tab_slide .today .con_title span{
+	background-color: white;
+	padding: 10px;
+	border-radius: 5px;
+	font-weight: 700;
+	color: #d61f25;
+}
+.main_tab_slide .today .con_sub_title{
+    font-size: 19px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-align: center;
+	color: #4b4b4b;
+}
+.main_tab_slide .today .con_sub_title b{
+	font-weight: 600;
+	color: #000000;
+}
+.main_tab_slide .today .item_inn{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
+	gap: 25px; 
 }
+.main_tab_slide .today .img_inn{
+	height: 225px;
+	overflow: hidden;
+}
+.main_tab_slide .today .img_inn img{
+	height: 100%;
+	border-radius: 4px;
+	transition: 0.2s;
+}
+.main_tab_slide .today .item:hover .img_inn img{
+	transform: scale(1.04);
+}
+.main_tab_slide .today .item{
+	display: flex;
+	gap: 20px;
+	background-color: white;
+	align-items: center;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+}
+.main_tab_slide .today .prd_title_inn{
+	flex: 1;
+	height: fit-content;
+}
+.main_tab_slide .today .remain_cnt{
+	padding: 0 10px;
+	background-color: #F1F1F1;
+	border-radius: 15px;
+	height: 30px;
+	line-height: 29px;
+	color: black;
+	font-size: 14px;
+	margin-bottom: 7px;
+}
+.main_tab_slide .today .remain_cnt em{
+	font-weight: 500;
+}
+.main_tab_slide .today .prd_title{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+	line-height: 1.3;
+	margin-bottom: 10px;
+}
+.main_tab_slide .today .item:hover .prd_title,
+.main_tab_slide .today .item:hover .prd_title .brand{
+	text-decoration: underline;
+}
+.main_tab_slide .today .orgin_price{
+	text-decoration: line-through;
+	color: #4b4b4b;
+	margin-bottom: 2px;
+}
+.main_tab_slide .today .per{
+	color: var(--m_c);
+	font-size: 18px;
+	font-weight: 600;
+	margin-right: 5px;
+}
+.main_tab_slide .today .dc_price{
+	font-size: 19px;
+	font-weight: 700;
+	/* margin-left: 5px; */
+	margin-bottom: 8px;
+}
+.main_tab_slide .today .point{
+	color: #1872c9;
+	font-size: 15px;
+	margin-bottom: 10px;
+	/* color: blue; */
+	font-weight: 500;
+}
+.main_tab_slide .today .keyword{
+	display: flex;
+	gap: 5px;
+}
+.main_tab_slide .today .keyword span{
+    padding: 0 7px;
+    font-size: 13px;
+    height: 24px;
+    line-height: 22px;
+    color: #5f5f5f;
+    border: 1px solid #DDDDDD;
+	border-radius: 3px;
+}
+
+
 /* HIT & 단독 */
 /* 상단 슬라이드(상품 나열)  */
 

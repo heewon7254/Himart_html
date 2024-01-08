@@ -1,5 +1,5 @@
 :root{
-	--m_c: #F5232A;
+	--m_c: #EE060B;
 }
 *{
 	margin: 0;
@@ -45,13 +45,14 @@ body{
 body.on{
 	overflow: hidden;
 }
-div, span, strong, p, h1, h2, h3, h4, h5, h6, pre{
+div, span, strong, p, h1, h2, h3, h4, h5, h6, pre, em, b{
 	font-size: inherit;
 	color: inherit;
 	font-family: inherit;
 	line-height: inherit;
 	font-weight: inherit;
 	text-align: inherit;
+	font-style: inherit;
 }
 ul{
 	color: inherit;
