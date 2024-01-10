@@ -13,6 +13,26 @@ menuList.forEach(function(item,idx){
 	});
 });
 
+// 메인 상품 추천 탭
+let prdRecmdTab = document.querySelectorAll('.main_recom_list .tab_btn button');
+let prdRecmdCon = document.querySelectorAll('.main_recom_list .tab_con .list')
+
+prdRecmdTab.forEach(function(item,idx){
+	item.addEventListener('click',function(){
+		// 탭 버튼 active 초기화
+		for(el of prdRecmdTab){
+			el.classList.remove('active');
+		}
+		// 탭 콘텐트 active 초기화
+		for(el of prdRecmdCon){
+			el.classList.remove('active');
+		}
+
+		prdRecmdTab[idx].classList.add('active');
+		prdRecmdCon[idx].classList.add('active');
+	});
+});
+
 // main tab slide 
 // let tabTitle = document.querySelectorAll('.main_tab_slide .tab_btn');
 
