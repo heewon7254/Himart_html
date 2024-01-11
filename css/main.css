@@ -68,6 +68,12 @@
     transform: translate(-50%, -50%);
 	z-index: 10;
 }
+.main_banner .main_slide .slide_btn_inn .btn::after{
+	color: white;
+}
+.main_banner .main_slide .slide_btn_inn .btn.black::after{
+	color: black;
+}
 
 /* 메인 탭슬라이드 */
 .main_tab_slide .con{

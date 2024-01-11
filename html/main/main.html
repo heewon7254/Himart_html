@@ -973,11 +973,17 @@
 				delay: 2500,
 				disableOnInteraction: false,
 			},
+			a11y: { // 웹 접근성
+				enabled: true,
+				slidesPerView: 'auto',
+				prevSlideMessage: '이전 슬라이드',
+				nextSlideMessage: '다음 슬라이드',   
+				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+			},
 		});
 
 		//메인 배너 슬라이드
-		// let mainBannerNavBtn = document.querySelectorAll('.main_banner .main_slide .btn');
-		let mainBannerNavBtn = $('.main_banner .main_slide .btn');
+		let mainBannerNavBtn = document.querySelectorAll('.main_banner .main_slide .btn');
 
 		var mainSlide = new Swiper('.main_slide', {
 			loop: true,
@@ -988,13 +994,18 @@
 			autoplay: {
 				delay: 2500,
 				disableOnInteraction: false,
-			},
-			a11y: { // 웹접근성 
-				enabled: true,
-				prevSlideMessage: '이전 슬라이드',
-				nextSlideMessage: '다음 슬라이드',   
-				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
-			},
+			}
+		});
+
+		//메인 배너 슬라이드 화살표 색 변경
+		mainSlide.on('activeIndexChange ', function(){
+			for(itm of mainBannerNavBtn){
+				if(mainSlide.realIndex == 0 || mainSlide.realIndex == 4){
+					itm.classList.add('black');
+				}else{
+					itm.classList.remove('black');
+				}
+			}
 		});
 
 		//메인 탭슬라이드
@@ -1005,14 +1016,7 @@
 			preventClicks: true,
 			preventClicksPropagation: false,
     		observer: true,
-    		observeParents: true,
-			a11y: { // 웹접근성 
-				enabled: true,
-				slidesPerView: 'auto',
-				prevSlideMessage: '이전 슬라이드',
-				nextSlideMessage: '다음 슬라이드',   
-				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
-			},
+    		observeParents: true
 		});
 
 		// 메인 탭 슬라이드 콘텐츠
@@ -1024,31 +1028,32 @@
 			preventClicksPropagation: false,
     		observer: true,
     		observeParents: true,
-			a11y: { // 웹접근성 
-				enabled: true,
-				slidesPerView: "auto",
-				prevSlideMessage: '이전 슬라이드',
-				nextSlideMessage: '다음 슬라이드',   
-				slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
-			},
 		});
 
-		//메인 탭슬라이드 클릭 시 이동
-		var tabSlideBtn = $('.main_tab_slide .tab_btn button');
+		//메인 슬라이드 버튼
+		let tabSlideBtn = document.querySelectorAll('.main_tab_slide .tab_btn button');
 
-		tabSlideBtn.click(function(){
-			var target = $(this).parent();
-			var targetIndex = $(this).parent().index();
-			tabSlideBtn.parent().removeClass('active_tab');
-			target.addClass('active_tab');
-
-			mainTabSlide.slideTo(targetIndex);
+		tabSlideBtn.forEach(function(item, idx){
+			item.addEventListener('click',function(){
+				// 버튼 초기화
+				for(el of tabSlideBtn){
+					el.parentElement.classList.remove('active_tab');
+				}
+				// 해당 버튼 활성화
+				tabSlideBtn[idx].parentElement.classList.add('active_tab');
+				// 해당 인덱스로 슬라이드 이동
+				mainTabSlide.slideTo(idx);
+			});
 		});
 
 		//메인 탭슬라이드 콘텐츠 스와이프 시, 해당 탭 버튼 활성화
 		mainTabSlide.on('activeIndexChange ', function(){
-			tabSlideBtn.parent().removeClass('active_tab');
-			tabSlideBtn.parent().eq(mainTabSlide.realIndex).addClass('active_tab');
+			// 탭 버튼 초기화
+			for(el of tabSlideBtn){
+				el.parentElement.classList.remove('active_tab');
+			}
+			// 해당 탭 활성화
+			tabSlideBtn[mainTabSlide.realIndex].parentElement.classList.add('active_tab');
 		});
 	</script>
 </body>

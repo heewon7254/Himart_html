@@ -1,13 +1,15 @@
-// drop menu
+// 헤더 드롭 메뉴
 let menuList = document.querySelectorAll('header nav .gnb .l_menu');
 let bgMask = document.querySelector('.bg_mask');
 
 menuList.forEach(function(item,idx){
+	// 메뉴 마우스 호버 시
 	item.addEventListener('mouseover',function(){
 		this.classList.add('active');
 		bgMask.classList.add('on');
 	});
-	item.addEventListener('mouseleave',function(){
+	// 메뉴 마우스 아웃 시
+	item.addEventListener('mouseout',function(){
 		this.classList.remove('active');
 		bgMask.classList.remove('on');
 	});
@@ -27,18 +29,8 @@ prdRecmdTab.forEach(function(item,idx){
 		for(el of prdRecmdCon){
 			el.classList.remove('active');
 		}
-
+		// 해당 인덱스 탭 활성화
 		prdRecmdTab[idx].classList.add('active');
 		prdRecmdCon[idx].classList.add('active');
 	});
 });
-
-// main tab slide 
-// let tabTitle = document.querySelectorAll('.main_tab_slide .tab_btn');
-
-// tabTitle.forEach(function(item){
-// 	item.addEventListener('click',function(){
-// 		item.classList.remove('swiper-slide-active');
-// 		this.classList.add('swiper-slide-active');
-// 	});
-// });
