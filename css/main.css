@@ -387,8 +387,14 @@
 .main_recom_list .tab_con .prd_item:hover .img_inn{
 	border-color: var(--m_c);
 }
-
-
+/* 카테고리별 인기 상품 리스트 */
+.main_ctg_list .tab_btn .btn_inn{
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+}
+.main_ctg_list .tab_btn .btn_inn button{
+	border: 1px solid #d7d6d6;
+}
 /* HIT & 단독 */
 /* 상단 슬라이드(상품 나열)  */
 
